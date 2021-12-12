@@ -65,3 +65,14 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# -------------------------------------------------------------------------------
+# Manually added things go below this
+# -------------------------------------------------------------------------------
+
+# rbenv
+.ruby-version
+
