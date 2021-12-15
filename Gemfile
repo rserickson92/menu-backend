@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # RSpec for unit tests
-  gem 'rspec', '~> 3.10'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
 end
 
 group :development do
