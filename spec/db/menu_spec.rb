@@ -4,7 +4,8 @@ describe 'example menus' do
 
   describe 'breakfast menu' do
     before(:all) do
-      @menu = Menu.create(name: "Stacks Breakfast Fixin's", menu_type: 'breakfast')
+      res = Restaurant.create(name: 'Stacks', address: '139 E Campbell Ave, Campbell, CA 95008')
+      @menu = Menu.create(restaurant: res, name: "Stacks Breakfast Fixin's", menu_type: 'breakfast')
       @menu.menu_items.create(name: 'Oreo Pancake Short Stack', price: 500)
       @menu.menu_items.create(name: 'Oreo Pancake Full Stack', price: 600, highlighted: true)
       @menu.menu_items.create(name: 'Denver Omelette', price: 700, highlighted: true)
@@ -20,7 +21,7 @@ describe 'example menus' do
     it 'has the menu accessible from the item' do
       item = MenuItem.find_by(name: 'Biscuits & Gravy')
 
-      expect(item.menu).to eq(@menu)
+      expect(item.menus.first).to eq(@menu)
     end
 
     it 'has highlights' do
@@ -53,5 +54,7 @@ describe 'example menus' do
       expect(@menu.menu_items.order(:name).pluck(:name)).to eq(expected_result)
     end
   end
+
+  describe 'brunch restaurant with multiple menus with shared items'
 end
 
