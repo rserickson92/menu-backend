@@ -1,7 +1,7 @@
 class MenuItem < ApplicationRecord
-  belongs_to :menu
+  has_and_belongs_to_many :menus
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :price, numericality: { greater_than_or_equal_to: 0 }
 
   def price_s
