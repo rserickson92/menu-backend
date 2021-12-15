@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Menu, type: :model do
+describe Menu do
   it 'is valid with valid attributes' do
     menu = Menu.new(name: "Bub's Burgers", type: 'dinner')
 

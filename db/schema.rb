@@ -29,4 +29,5 @@ ActiveRecord::Schema.define(version: 2021_12_13_150044) do
 # Could not dump table "menus" because of following StandardError
 #   Unknown type 't_menu_type' for column 'type'
 
+  add_foreign_key "menu_items", "menus"
 end
