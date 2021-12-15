@@ -11,3 +11,4 @@ class MenuItem < ApplicationRecord
     str.insert(0, '$')
   end
 end
+

@@ -1,6 +1,8 @@
+require 'rails_helper'
+
 describe MenuItem do
 
-  let (:menu) { double(:menu) }
+  let (:menu) { Menu.new(name: 'In-n-Out', menu_type: 'dinner') }
   let (:menu_item) { MenuItem.new(menu: menu, name: 'Double-Double', price: 400) }
   
   it 'is valid with valid attributes' do
@@ -8,7 +10,7 @@ describe MenuItem do
   end
 
   it 'is invalid when not part of a menu' do
-    menu_item.menu = null
+    menu_item.menu = nil
 
     expect(menu_item).not_to be_valid
   end

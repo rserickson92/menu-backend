@@ -7,7 +7,7 @@ class CreateMenus < ActiveRecord::Migration[6.1]
     create_table :menus do |t|
       t.timestamps
       t.string :name, limit: 50, null: false
-      t.column :type, :t_menu_type, null: false
+      t.column :menu_type, :t_menu_type, null: false
     end
   end
 
