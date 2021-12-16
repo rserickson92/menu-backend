@@ -23,3 +23,16 @@ rspec spec/db/menu_item_spec.rb
 rspec spec/db/restaurant_spec.rb
 ```
 
+# Preliminary thoughts on next steps:
+* `Order` model (has many order items)
+  + `table_number` (integer)
+  + `seat_number` (integer)
+
+* `OrderItem` model
+  + `menu_item_id` (foreign key referencing menu item ordered)
+  + `quantity` (integer)
+
+* Additions to `MenuItem` model
+  + `classification` (enum `["appetizer", "entree", "side", "dessert"]`)
+  + make uniqueness constraint among (name, classification) OR add naming convention to fit in with current name uniqueness constraint
+
