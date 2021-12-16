@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_202133) do
+ActiveRecord::Schema.define(version: 2021_12_16_014024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_12_15_202133) do
     t.text "description"
     t.boolean "highlighted", default: false, null: false
     t.index ["name"], name: "index_menu_items_on_name", unique: true
+    t.check_constraint "price >= 0"
   end
 
   create_table "menu_items_menus", id: false, force: :cascade do |t|

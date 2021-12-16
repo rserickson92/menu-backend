@@ -6,9 +6,17 @@ class MenuItem < ApplicationRecord
 
   def price_s
     str = price.to_s
-    decimal_index = str.length == 1 ? 0 : -3
-    str.insert(decimal_index, '.')
-    str.insert(0, '$')
+    if str.length == 1
+      str.insert(0, '$0.0')
+    elsif str.length == 2
+      str.insert(-3, '.')
+      str.insert(0, '$0')
+    else
+      str.insert(-3, '.')
+      str.insert(0, '$')
+    end
+
+    str
   end
 end
 
