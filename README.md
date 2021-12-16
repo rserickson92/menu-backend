@@ -1,24 +1,25 @@
-# README
+# menu-backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Note on running tests:
 
-Things you may want to cover:
+The config for resetting the database between tests does not work on my machine
+(Ubuntu VM running on a windows laptop) and I have not found the root cause yet.
+So for now, I have a script that resets the development and test databases that
+is meant to be run between each DB test (or as desired when playing with rails
+console when not in sandbox mode). For example, to run all existing tests as
+of the last update to this doc:
 
-* Ruby version
+```
+./test-db-reset-workaround.sh
+rspec spec/models
 
-* System dependencies
+./test-db-reset-workaround.sh
+rspec spec/db/menu_spec.rb
 
-* Configuration
+./test-db-reset-workaround.sh
+rspec spec/db/menu_item_spec.rb
 
-* Database creation
+./test-db-reset-workaround.sh
+rspec spec/db/restaurant_spec.rb
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
